@@ -45440,7 +45440,8 @@ const run = () => __awaiter(void 0, void 0, void 0, function* () {
     if (!knownAppTypes.includes(appFile.type)) {
         throw new Error(`Unsupported app file type: ${appFile.type}`);
     }
-    (0, log_1.info)("includeTags" + includeTags);
+    (0, log_1.info)("tags" + includeTags + " " + excludeTags);
+    (0, log_1.info)("isEmpty (included)" + includeTags.length + " (excluded)" + excludeTags.length);
     const workspaceZip = yield createWorkspaceZip(workspaceFolder);
     const client = new ApiClient_1.default(apiKey, apiUrl);
     (0, log_1.info)("Uploading to Maestro Cloud");
