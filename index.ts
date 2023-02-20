@@ -69,6 +69,7 @@ const run = async () => {
     throw new Error(`Unsupported app file type: ${appFile.type}`)
   }
 
+  info("includeTags" + includeTags)
   const workspaceZip = await createWorkspaceZip(workspaceFolder)
 
   const client = new ApiClient(apiKey, apiUrl)
