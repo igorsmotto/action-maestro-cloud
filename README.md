@@ -138,7 +138,7 @@ If you want to pass environment variables along with your upload, add a multilin
 
 You can use Maestro (Tags)[https://maestro.mobile.dev/cli/tags] to filter which Flows to send to Maestro Cloud:
 
-You can either pass a single value, or using square brackets syntax.
+You can either pass a single value, or comma-separated (`,`) values.
 
 ```yaml
 - uses: mobile-dev-inc/action-maestro-cloud@v1.2.3
