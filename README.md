@@ -146,5 +146,5 @@ You can either pass a single value, or using square brackets syntax.
     api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
     app-file: app.zip
     include-tags: [dev, pull-request]
-    exclude-tags: excludeaTag
+    exclude-tags: excludeTag
 ```
