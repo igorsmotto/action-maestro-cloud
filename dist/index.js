@@ -45606,6 +45606,8 @@ function getAndroidApiLevel(apiLevel) {
 function parseTags(tags) {
     if (tags === undefined)
         return [];
+    if (tags === '')
+        return [];
     if (tags.includes(',')) {
         const arrayTags = tags.split(',')
             .map(it => it.trim());
