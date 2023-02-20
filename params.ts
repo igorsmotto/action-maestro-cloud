@@ -84,6 +84,7 @@ function getAndroidApiLevel(apiLevel?: string): number | undefined {
 
 function parseTags(tags?: string): string[] {
   if (tags === undefined) return []
+  if (tags === '') return []
 
   if (tags.includes(',')) {
     const arrayTags = tags.split(',')
