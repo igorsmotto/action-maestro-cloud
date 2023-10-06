@@ -47249,7 +47249,7 @@ function getParameters() {
         const excludeTags = parseTags(core.getInput('exclude-tags', { required: false }));
         const appFilePath = core.getInput('app-file', { required: false });
         const appBinaryId = core.getInput('app-binary-id', { required: false });
-        if ((appFilePath !== "") !== (appBinaryId !== "")) {
+        if (!(appFilePath !== "") !== (appBinaryId !== "")) {
             throw new Error("Either app-file or app-binary-id must be used");
         }
         var env = {};
