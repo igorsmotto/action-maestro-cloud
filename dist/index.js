@@ -47070,7 +47070,7 @@ const run = () => __awaiter(void 0, void 0, void 0, function* () {
         iOSVersion: iOSVersion,
         includeTags: includeTags,
         excludeTags: excludeTags,
-        appBinaryId: appBinaryId
+        appBinaryId: appBinaryId || undefined,
     };
     const { uploadId, teamId, targetId: appId, appBinaryId: uploadedBinaryId } = yield client.uploadRequest(request, appFile && appFile.path, workspaceZip, mappingFile && (yield (0, archive_utils_1.zipIfFolder)(mappingFile)));
     const consoleUrl = (0, exports.getConsoleUrl)(uploadId, teamId, appId);
