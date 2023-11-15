@@ -46725,6 +46725,7 @@ class StatusPoller {
         this.uploadId = uploadId;
         this.consoleUrl = consoleUrl;
         this.completedFlows = {};
+        this.stopped = false;
     }
     markFailed(msg) {
         core.setFailed(msg);
@@ -46746,7 +46747,7 @@ class StatusPoller {
                         this.completedFlows[flow.name] = flow.status;
                     }
                 }
-                if (completed) {
+                if (completed && !this.stopped) {
                     this.teardown();
                     console.log('');
                     printUploadResult(status, flows);
@@ -46793,6 +46794,7 @@ class StatusPoller {
     registerTimeout(timeoutInMinutes) {
         this.timeout = setTimeout(() => {
             (0, log_1.warning)(`Timed out waiting for Upload to complete. View the Upload in the console for more information: ${this.consoleUrl}`);
+            this.stopped = true;
         }, timeoutInMinutes ? (timeoutInMinutes * 60 * 1000) : WAIT_TIMEOUT_MS);
     }
     teardown() {
