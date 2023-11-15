@@ -46739,6 +46739,9 @@ class StatusPoller {
     }
     poll(sleep, prevErrorCount = 0) {
         return __awaiter(this, void 0, void 0, function* () {
+            if (this.stopped) {
+                return;
+            }
             try {
                 const { completed, status, flows } = yield this.client.getUploadStatus(this.uploadId);
                 for (const flow of flows.filter(isCompleted)) {
